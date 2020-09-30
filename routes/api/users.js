@@ -70,7 +70,7 @@ router.post(
       );
     } catch (err) {
       console.error(err.message);
-      return res.status(400).send('Server Error');
+      res.status(400).send('Server Error');
     }
   }
 );
