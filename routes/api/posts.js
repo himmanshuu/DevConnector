@@ -28,7 +28,7 @@ router.post(
         avatar: user.avatar,
         user: req.user.id,
       };
-      const post = await new Post(newPost);
+      const post = new Post(newPost);
       await post.save();
       res.json(post);
     } catch (err) {
@@ -91,7 +91,7 @@ router.delete('/:id', auth, async (req, res) => {
     return res.status(500).send('Server Error');
   }
 });
-//@route api/posts/likes/:id
+//@route api/posts/like/:id
 //@desc like a post
 //@access Provate
 
